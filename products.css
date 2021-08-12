@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(#dfdfdf, #ccc)
+}
+.products {
+    position: relative;
+    width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-gap: 20px;
+    padding: 20px;
+}
+.products .product-card {
+    width: 100%;
+    background-color: #fff;
+}
+.product-card .image {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+}
+.product-card .image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .3s ease-in-out;
+    transform-origin: top center;
+}
+.product-card:hover .image img {
+    transform: scale(1.4);
+}
+.product-card .content {
+    padding: 10px;
+}
+.product-card .content .productname{
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 5px 0;
+}
+.product-card .content .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
+.product-card .content .info .price {
+    color: #222;
+}
+.product-card .content .info .rating {
+    color: #ffd513;
+    font-size: 12px;
+    cursor: pointer;
+}
+.action-list {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    gap: 10px;
+}
+
+.action-list li {
+    position: relative;
+    transform: translateY(-50px);
+    font-size: 24px;
+    padding: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: rgba(0, 0, 0, .3);
+    color: #fff;
+    transition: .2s ease-in-out;
+    cursor: pointer;
+}
+.action-list li:hover{
+    color: #ffd513;
+}
+.product-card:hover .image .action-list li {
+    transform: translateY(10px);
+}
+.action-list li:nth-child(1) {
+    transition-delay: .05s;
+}
+.action-list li:nth-child(2) {
+    transition-delay: .10s;
+}
+.action-list li:nth-child(3) {
+    transition-delay: .15s;
+}
+.action-list li span {
+    position: absolute;
+    background-color: rgba(255, 255, 255, .2);
+    white-space: nowrap;
+    top: -30px;
+    font-size: 12px;
+    left: -50%;
+    width: 100%;
+    transform: translateX(50%);
+}
